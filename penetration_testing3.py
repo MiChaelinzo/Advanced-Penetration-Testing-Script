@@ -117,8 +117,8 @@ get_cookies_secure_flag(url)
 
 # Test for insufficient logging and monitoring
 r = requests.get(website + "/log", headers=headers)
-    if "logged in" in r.text.lower() or "error" in r.text.lower():
-     print("Insufficient logging and monitoring. Log data found in the response.")
+if "logged in" in r.text.lower() or "error" in r.text.lower():
+    print("Insufficient logging and monitoring. Log data found in the response.")
 
 # Test for brute force attack protection
 payloads = ["root", "admin", "test", "password", "123456", "admin123", "qwerty"]
