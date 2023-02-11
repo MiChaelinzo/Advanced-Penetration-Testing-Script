@@ -97,13 +97,23 @@ if "sessionid" in r.cookies:
         print("Broken authentication and session management. Able to access the application with an expired or tampered session ID.")
 
 # Test for cookie security
-secure_cookie = False
-    for cookie in r.cookies:
-     if cookie.secure:
-secure_cookie = True
-      break
-      if not secure_cookie:
-print("Cookie security vulnerability found. Cookies are not marked as secure.")
+def get_cookies_secure_flag(url):
+    # Make a GET request to the URL
+    response = requests.get(url)
+
+    # Get all the cookies set by the server
+    cookies = response.cookies
+
+    # Print the secure flag of each cookie
+    for cookie in cookies:
+        print("Cookie:", cookie.name)
+        print("Secure Flag:", cookie.secure)
+
+# Example URL
+url = website
+
+# Call the function to get the secure flag of cookies
+get_cookies_secure_flag(url)
 
 # Test for insufficient logging and monitoring
 r = requests.get(website + "/log", headers=headers)
