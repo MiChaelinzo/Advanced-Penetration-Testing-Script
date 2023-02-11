@@ -130,7 +130,7 @@ for payload in payloads:
 # Test for content security policy
 r = requests.get(website, headers=headers)
 if "Content-Security-Policy" in r.headers:
-if "script-src 'self'" not in r.headers["Content-Security-Policy"]:
+  if "script-src 'self'" not in r.headers["Content-Security-Policy"]:
    print("Content security policy vulnerability found. Scripts are not restricted to the same origin.")
 
 # Test for server-side request forgery (SSRF) vulnerabilities
