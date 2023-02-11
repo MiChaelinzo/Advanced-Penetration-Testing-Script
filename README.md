@@ -4,9 +4,10 @@ This script is intended to be used as an example and may not reflect the actual 
 
 #### How to use: 
 - 1.) git clone https://github.com/MiChaelinzo/Advanced-Penetration-Testing-Script.git
-- 2.) python3 -m pip install -r requirements.txt
-- 3.) python3 penetration_testing3.py
-- 4.) Enjoy using Advance Penetration Testing Script, there will be more updates for this repository and script! 
+- 2.) cd Advanced-Penetration-Testing-Script
+- 3.) python3 -m pip install -r requirements.txt
+- 4.) python3 penetration_testing3.py
+- 5.) Enjoy using Advance Penetration Testing Script, there will be more updates for this repository and script! 
 
 #### Updates:
 - Added Test for directory traversal vulnerabilities
