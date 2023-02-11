@@ -146,7 +146,7 @@ for cors_header in cors_headers:
    r = requests.get(website, headers=headers)
    if cors_header not in r.headers:
       print("CORS vulnerability found. Missing " + cors_header + " header.")
-    elif r.headers[cors_header] == "*":
+   elif r.headers[cors_header] == "*":
       print("CORS vulnerability found. " + cors_header + " header set to *.")
 
 
