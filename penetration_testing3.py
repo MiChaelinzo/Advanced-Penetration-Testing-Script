@@ -96,4 +96,49 @@ if "sessionid" in r.cookies:
     if "logged in" in r.text.lower():
         print("Broken authentication and session management. Able to access the application with an expired or tampered session ID.")
 
+# Test for cookie security
+secure_cookie = False
+for cookie in r.cookies:
+if cookie.secure:
+secure_cookie = True
+break
+if not secure_cookie:
+print("Cookie security vulnerability found. Cookies are not marked as secure.")
+
+# Test for insufficient logging and monitoring
+r = requests.get(website + "/log", headers=headers)
+if "logged in" in r.text.lower() or "error" in r.text.lower():
+print("Insufficient logging and monitoring. Log data found in the response.")
+
+# Test for brute force attack protection
+payloads = ["root", "admin", "test", "password", "123456", "admin123", "qwerty"]
+for payload in payloads:
+r = requests.post(website + "/login", headers=headers, data={"username": payload, "password": payload})
+if "maximum login attempts exceeded" not in r.text.lower():
+print("Brute force attack protection vulnerability found. No limit on login attempts.")
+
+# Test for content security policy
+r = requests.get(website, headers=headers)
+if "Content-Security-Policy" in r.headers:
+if "script-src 'self'" not in r.headers["Content-Security-Policy"]:
+print("Content security policy vulnerability found. Scripts are not restricted to the same origin.")
+
+# Test for server-side request forgery (SSRF) vulnerabilities
+ssrf_urls = ["http://localhost", "http://127.0.0.1"]
+for ssrf_url in ssrf_urls:
+r = requests.get(website + "?url=" + ssrf_url, headers=headers)
+if "localhost" in r.text.lower() or "127.0.0.1" in r.text.lower():
+print("SSRF vulnerability found with URL: " + ssrf_url)
+
+# Test for cross-origin resource sharing (CORS) vulnerabilities
+cors_headers = ["Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"]
+for cors_header in cors_headers:
+r = requests.get(website, headers=headers)
+if cors_header not in r.headers:
+print("CORS vulnerability found. Missing " + cors_header + " header.")
+elif r.headers[cors_header] == "*":
+print("CORS vulnerability found. " + cors_header + " header set to *.")
+
+
+
 
