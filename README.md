@@ -16,6 +16,7 @@ This script is intended to be used as an example and may not reflect the actual 
 - Added Test for open redirect vulnerabilities
 - Added Test for insecure communication
 - Added Test for insecure session management
+-  2/11/2023: 
 - Added Test for cookie security
 - Added Test for insufficient logging and monitoring
 - Added Test for brute force attack protection
