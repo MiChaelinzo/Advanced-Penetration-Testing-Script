@@ -3,11 +3,12 @@ The script is an advanced Python-based tool that can be used to test a website f
 This script is intended to be used as an example and may not reflect the actual vulnerabilities of the website being tested. Additionally, it is important to understand the potential risks and consequences of penetration testing, including legal and ethical considerations, and that you should have the explicit permission before running any test on a website.
 
 #### How to use: 
-- 1.) git clone https://github.com/MiChaelinzo/Advanced-Penetration-Testing-Script.git
-- 2.) cd Advanced-Penetration-Testing-Script
-- 3.) python3 -m pip install -r requirements.txt
-- 4.) python3 penetration_testing3.py
+- 1.) `git clone https://github.com/MiChaelinzo/Advanced-Penetration-Testing-Script.git`
+- 2.) `cd Advanced-Penetration-Testing-Script`
+- 3.) `python3 -m pip install -r requirements.txt`
+- 4.) `python3 penetration_testing3.py`
 - 5.) Enjoy using Advance Penetration Testing Script, there will be more updates for this repository and script! 
+
 <img width="842" alt="Screenshot 2023-02-11 102225" src="https://user-images.githubusercontent.com/68110223/218246110-be7659c5-af19-4d2f-9a77-cd9f21cd3b17.png">
 
 #### Updates:
