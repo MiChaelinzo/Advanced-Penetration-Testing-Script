@@ -1,4 +1,4 @@
-import requests
+import request
 import json
 from bs4 import BeautifulSoup
 from random_user_agent.user_agent import UserAgent
