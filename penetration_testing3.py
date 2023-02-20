@@ -169,7 +169,7 @@ for resource in user["resources"]:
         print("Broken access control vulnerability found. User " + user["username"] + " was able to access " + resource)
 
 # Logout
-r = requests.get(website + "/logout", headers=headers)
+    r = requests.get(website + "/logout", headers=headers)
 
 
 
