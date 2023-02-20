@@ -149,6 +149,29 @@ for cors_header in cors_headers:
    elif r.headers[cors_header] == "*":
       print("CORS vulnerability found. " + cors_header + " header set to *.")
 
+# Test for broken access control vulnerabilities
+users = [{"username": "user1", "password": "password1", "resources": ["/admin"]},
+{"username": "user2", "password": "password2", "resources": ["/admin", "/confidential"]},
+{"username": "user3", "password": "password3", "resources": ["/confidential"]}]
+
+for user in users:
+# Login with the user's credentials
+   r = requests.post(website + "/login", headers=headers, data={"username": user["username"], "password": user["password"]})
+   if "logged in" in r.text.lower():
+     print("Logged in with user " + user["username"])
+   else:
+     print("Failed to login with user " + user["username"])
+
+# Try to access the user's resources
+for resource in user["resources"]:
+    r = requests.get(website + resource, headers=headers)
+    if r.status_code == 200:
+        print("Broken access control vulnerability found. User " + user["username"] + " was able to access " + resource)
+
+# Logout
+r = requests.get(website + "/logout", headers=headers)
+
+
 
 
 
