@@ -26,7 +26,8 @@ This script is intended to be used as an example and may not reflect the actual 
 - Added Test for content security policy
 - Added Test for server-side request forgery (SSRF) vulnerabilities
 - Added Test for cross-origin resource sharing (CORS) vulnerabilities
-
+- 2/20/2023:
+- Added Test broken access control vulnerabilities
 
 
 ![Razeswag77_Cyberpunk_2077_character_cinematic_shot_ray_tracing__6cd2a5bb-ae35-4ada-bdc4-6f0830898728](https://user-images.githubusercontent.com/68110223/216805944-5500f5b8-883f-4621-876a-d8c9da678813.png)
