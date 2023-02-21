@@ -12,6 +12,7 @@ This script is intended to be used as an example and may not reflect the actual 
 <img width="842" alt="Screenshot 2023-02-11 102225" src="https://user-images.githubusercontent.com/68110223/218246110-be7659c5-af19-4d2f-9a77-cd9f21cd3b17.png">
 
 #### Updates:
+- 1/20/2023
 - Added Test for directory traversal vulnerabilities
 - Added Test for weak credentials
 - Added Test for missing or weak HTTP headers
