@@ -30,7 +30,7 @@ This script is intended to be used as an example and may not reflect the actual 
 - 2/20/2023:
 - Added Test broken access control vulnerabilities
 
-Image generated from Midjourney!
+Here some Cyberpunk Image generated from Midjourney!
 ![Razeswag77_Cyberpunk_2077_character_cinematic_shot_ray_tracing__6cd2a5bb-ae35-4ada-bdc4-6f0830898728](https://user-images.githubusercontent.com/68110223/216805944-5500f5b8-883f-4621-876a-d8c9da678813.png)
 
 
