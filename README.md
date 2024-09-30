@@ -29,6 +29,19 @@ This script is intended to be used as an example and may not reflect the actual 
 - Added Test for cross-origin resource sharing (CORS) vulnerabilities
 - 2/20/2023:
 - Added Test broken access control vulnerabilities
+**Contributing**
+
+We welcome contributions to improve and expand this project. Please feel free to open issues or submit pull requests.
+
+**Disclaimer**
+
+This project is for demonstration purposes only and should not be used in a clinical setting without proper validation and regulatory approvals.
+
+**License**
+
+This project is licensed under the MIT License.
+
+
 
 Here some Cyberpunk Image generated from Midjourney!
 
