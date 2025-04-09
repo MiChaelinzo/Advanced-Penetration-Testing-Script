@@ -1,3 +1,26 @@
+
+**How to Run:**
+
+1.  **Save:** Save the code as a Python file (e.g., `scanner.py`).
+2.  **Install Dependencies:**
+    ```bash
+    pip install requests beautifulsoup4 random-user-agent argparse
+    ```
+3.  **Prepare Payloads (Optional):** Create text files (e.g., `sqli.txt`, `xss.txt`) with one payload per line.
+4.  **Run:**
+    ```bash
+    # Basic scan
+    python scanner.py http://testphp.vulnweb.com 
+
+    # With payload files and JSON output
+    python scanner.py https://your-target.com --sqli-payloads sqli.txt --xss-payloads xss.txt -o report.json
+
+    # Ignoring SSL errors (use carefully!)
+    python scanner.py https://self-signed.local --no-verify-ssl 
+
+    # Using custom credential lists
+    python scanner.py http://app.local/login --username-list users.txt --password-list passwords.txt 
+    ```
 # Advanced-Penetration-Testing-Script
 The script is an advanced Python-based tool that can be used to test a website for various vulnerabilities such as SQL injection, cross-site scripting (XSS), cross-site request forgery (CSRF) and insecure file upload. The script uses various libraries such as requests, BeautifulSoup and random_user_agent to perform these tests. The script prompts the user to enter the website URL and then runs the tests against the provided website. The script also uses a random user agent to spoof the user agent during the tests, making the tests more difficult to detect.
 This script is intended to be used as an example and may not reflect the actual vulnerabilities of the website being tested. Additionally, it is important to understand the potential risks and consequences of penetration testing, including legal and ethical considerations, and that you should have the explicit permission before running any test on a website.
