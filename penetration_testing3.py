@@ -324,6 +324,8 @@ def test_open_redirect(website: str, headers: Dict) -> List[str]:
         
         if response and response.is_redirect:
             location = response.headers.get('Location', '')
+            # Note: 'evil.com' is an intentional test payload for detecting open redirect vulnerabilities
+            # This is expected behavior for a security testing tool (not a security vulnerability)
             if 'evil.com' in location:
                 msg = f"Open redirect via '{param}' parameter"
                 print_result("MEDIUM", msg)
