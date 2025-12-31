@@ -1,74 +1,275 @@
+# 🔒 Advanced Penetration Testing Script v2.0
 
-**How to Run:**
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-2.0.0-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/Python-3.8+-green.svg" alt="Python">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+</p>
 
-1.  **Save:** Save the code as a Python file (e.g., `scanner.py`).
-2.  **Install Dependencies:**
-    ```bash
-    pip install requests beautifulsoup4 random-user-agent argparse
-    ```
-3.  **Prepare Payloads (Optional):** Create text files (e.g., `sqli.txt`, `xss.txt`) with one payload per line.
-4.  **Run:**
-    ```bash
-    # Basic scan
-    python scanner.py http://testphp.vulnweb.com 
+A comprehensive, high-tech penetration testing toolkit for authorized security assessments. This tool provides extensive vulnerability scanning capabilities for web applications, APIs, and network services.
 
-    # With payload files and JSON output
-    python scanner.py https://your-target.com --sqli-payloads sqli.txt --xss-payloads xss.txt -o report.json
+## ⚠️ Ethical Use Warning
 
-    # Ignoring SSL errors (use carefully!)
-    python scanner.py https://self-signed.local --no-verify-ssl 
+**This tool is intended for authorized security testing ONLY.**
 
-    # Using custom credential lists
-    python scanner.py http://app.local/login --username-list users.txt --password-list passwords.txt 
-    ```
-# Advanced-Penetration-Testing-Script
-The script is an advanced Python-based tool that can be used to test a website for various vulnerabilities such as SQL injection, cross-site scripting (XSS), cross-site request forgery (CSRF) and insecure file upload. The script uses various libraries such as requests, BeautifulSoup and random_user_agent to perform these tests. The script prompts the user to enter the website URL and then runs the tests against the provided website. The script also uses a random user agent to spoof the user agent during the tests, making the tests more difficult to detect.
-This script is intended to be used as an example and may not reflect the actual vulnerabilities of the website being tested. Additionally, it is important to understand the potential risks and consequences of penetration testing, including legal and ethical considerations, and that you should have the explicit permission before running any test on a website.
+Using this tool against websites without explicit permission from the owner is **ILLEGAL and UNETHICAL**. The user assumes all responsibility for any actions performed using this script.
 
-#### How to use: 
-- 1.) `git clone https://github.com/MiChaelinzo/Advanced-Penetration-Testing-Script.git`
-- 2.) `cd Advanced-Penetration-Testing-Script`
-- 3.) `python3 -m pip install -r requirements.txt`
-- 4.) `python3 penetration_testing3.py`
-- 5.) Enjoy using Advance Penetration Testing Script, there will be more updates for this repository and script! 
+## ✨ Features
 
-<img width="842" alt="Screenshot 2023-02-11 102225" src="https://user-images.githubusercontent.com/68110223/218246110-be7659c5-af19-4d2f-9a77-cd9f21cd3b17.png">
+### 🔍 Reconnaissance
+- **Web Crawling**: Automated URL discovery with configurable depth
+- **Technology Fingerprinting**: Detect CMS, frameworks, and server technologies
+- **Subdomain Enumeration**: Discover subdomains via DNS resolution
+- **Port Scanning**: Scan common ports for open services
+- **JavaScript Analysis**: Extract API endpoints from JS files
 
-#### Updates:
-- 1/20/2023
-- Added Test for directory traversal vulnerabilities
-- Added Test for weak credentials
-- Added Test for missing or weak HTTP headers
-- Added Test for clickjacking vulnerabilities
-- Added Test for open redirect vulnerabilities
-- Added Test for insecure communication
-- Added Test for insecure session management
--  2/11/2023: 
-- Added Test for cookie security
-- Added Test for insufficient logging and monitoring
-- Added Test for brute force attack protection
-- Added Test for content security policy
-- Added Test for server-side request forgery (SSRF) vulnerabilities
-- Added Test for cross-origin resource sharing (CORS) vulnerabilities
-- 2/20/2023:
-- Added Test broken access control vulnerabilities
-**Contributing**
+### 💉 Injection Testing
+- **SQL Injection**: Error-based and time-based blind SQLi detection
+- **Cross-Site Scripting (XSS)**: Reflected and DOM-based XSS testing
+- **Command Injection**: OS command injection detection
+- **LDAP Injection**: LDAP query manipulation testing
+- **Server-Side Template Injection (SSTI)**: Template engine exploitation
+- **XML External Entity (XXE)**: XML parser vulnerability testing
 
-We welcome contributions to improve and expand this project. Please feel free to open issues or submit pull requests.
+### 🔐 Authentication & Authorization
+- **CSRF Testing**: Cross-Site Request Forgery detection
+- **Weak Credentials**: Default/common password testing
+- **JWT Security**: Token analysis and algorithm verification
+- **Session Management**: Cookie security analysis
 
-**Disclaimer**
+### 🌐 API Security
+- **REST API Testing**: Common API vulnerability checks
+- **GraphQL Security**: Introspection and query batching tests
+- **CORS Misconfiguration**: Cross-origin resource sharing analysis
+- **Rate Limiting**: Brute force protection detection
 
-This project is for demonstration purposes only and should not be used in a clinical setting without proper validation and regulatory approvals.
+### 🛡️ Security Headers & Configuration
+- **HTTP Security Headers**: CSP, HSTS, X-Frame-Options, etc.
+- **TLS/SSL Analysis**: Certificate and cipher suite verification
+- **Cookie Security**: Secure, HttpOnly, SameSite attributes
+- **Information Disclosure**: Sensitive file exposure detection
 
-**License**
+### 📊 Reporting
+- **JSON Reports**: Machine-readable output
+- **HTML Reports**: Beautiful, interactive reports
+- **Console Output**: Color-coded real-time results
+- **Severity Classification**: CRITICAL, HIGH, MEDIUM, LOW, INFO
 
-This project is licensed under the MIT License.
+## 🚀 Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/MiChaelinzo/Advanced-Penetration-Testing-Script.git
 
+# Navigate to the directory
+cd Advanced-Penetration-Testing-Script
 
-Here some Cyberpunk Image generated from Midjourney!
+# Install dependencies
+pip install -r requirements.txt
+```
 
-![Razeswag77_Cyberpunk_2077_character_cinematic_shot_ray_tracing__6cd2a5bb-ae35-4ada-bdc4-6f0830898728](https://user-images.githubusercontent.com/68110223/216805944-5500f5b8-883f-4621-876a-d8c9da678813.png)
+## 📖 Usage
 
+### Quick Scan (Interactive Mode)
+```bash
+python penetration_testing3.py
+```
+Or with URL:
+```bash
+python penetration_testing3.py https://example.com
+```
 
+### Advanced Scanner (Command Line)
 
+#### Basic Scan
+```bash
+python scanner.py https://example.com
+```
+
+#### Full Comprehensive Scan
+```bash
+python scanner.py https://example.com --full-scan
+```
+
+#### With Custom Options
+```bash
+# Scan with port scanning and subdomain enumeration
+python scanner.py https://example.com --scan-ports --enum-subdomains
+
+# Save HTML report
+python scanner.py https://example.com -o report.html --format html
+
+# Use custom payload files
+python scanner.py https://example.com --sqli-payloads sqli.txt --xss-payloads xss.txt
+
+# Ignore SSL certificate errors
+python scanner.py https://self-signed.local --no-verify-ssl
+
+# Verbose output
+python scanner.py https://example.com -v --full-scan
+```
+
+### Command Line Options
+
+```
+Target:
+  url                   Target website URL (e.g., https://example.com)
+
+Scan Options:
+  --full-scan           Enable all scan features
+  --crawl               Enable web crawling (default: enabled)
+  --no-crawl            Disable web crawling
+  --crawl-depth N       Maximum crawl depth (default: 2)
+  --max-pages N         Maximum pages to crawl (default: 50)
+  --scan-ports          Enable port scanning
+  --enum-subdomains     Enable subdomain enumeration
+  --test-creds          Test for weak credentials (default: enabled)
+  --no-test-creds       Disable credential testing
+
+Payload Files:
+  --sqli-payloads FILE  Custom SQL injection payloads
+  --xss-payloads FILE   Custom XSS payloads
+  --dir-payloads FILE   Custom directory traversal payloads
+  --username-list FILE  Custom usernames for testing
+  --password-list FILE  Custom passwords for testing
+
+Output Options:
+  -o, --output FILE     Output file for report
+  --format {json,html}  Report format (default: json)
+  -v, --verbose         Enable verbose output
+  -q, --quiet           Minimal output
+
+Connection Options:
+  --no-verify-ssl       Disable SSL certificate verification
+  --timeout N           Request timeout in seconds (default: 10)
+  --threads N           Number of concurrent threads (default: 10)
+```
+
+## 📁 Project Structure
+
+```
+Advanced-Penetration-Testing-Script/
+├── scanner.py              # Main advanced scanner with full features
+├── penetration_testing3.py # Quick interactive scanner
+├── requirements.txt        # Python dependencies
+├── README.md               # Documentation
+├── LICENSE                 # MIT License
+└── .github/
+    ├── FUNDING.yml
+    └── ISSUE_TEMPLATE/
+```
+
+## 🔧 Vulnerability Tests
+
+| Category | Tests |
+|----------|-------|
+| **Injection** | SQL Injection, XSS, Command Injection, LDAP Injection, SSTI, XXE |
+| **Authentication** | CSRF, Weak Credentials, Broken Session Management |
+| **Security Headers** | CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy |
+| **TLS/SSL** | Certificate Validation, Protocol Version, Cipher Strength |
+| **API Security** | CORS, GraphQL Introspection, JWT Analysis, Rate Limiting |
+| **Information Disclosure** | Directory Traversal, Sensitive Files, Debug Mode |
+| **Other** | Clickjacking, Open Redirect, Insecure File Upload, SSRF |
+
+## 📋 Example Output
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║           Advanced Web Vulnerability Scanner v2.0.0              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🚀 Starting comprehensive scan on https://example.com
+
+📡 PHASE 1: Reconnaissance
+----------------------------------------
+🔬 Fingerprinting technologies...
+  ✓ Detected: Nginx
+  ✓ Detected: PHP
+🕷️ Starting web crawl...
+  Discovered 25 URLs, 8 JS files
+
+🔍 PHASE 2: Vulnerability Testing
+----------------------------------------
+💉 Testing for SQL Injection vulnerabilities...
+📝 Testing for XSS vulnerabilities...
+🔒 Testing HTTP Security Headers...
+  [MEDIUM] Missing Security Header - CSP
+
+============================================================
+📋 SCAN RESULTS
+============================================================
+
+📊 Summary:
+   CRITICAL: 0
+   HIGH: 1
+   MEDIUM: 3
+   LOW: 5
+   INFO: 2
+   TOTAL: 11
+
+💾 Report saved to: report.html
+```
+
+## 🤝 Contributing
+
+We welcome contributions to improve and expand this project! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Areas for Contribution
+- Additional vulnerability checks
+- Improved detection accuracy
+- Performance optimizations
+- Documentation improvements
+- Bug fixes
+
+## 📜 Disclaimer
+
+This project is for **educational and authorized security testing purposes only**. 
+
+- Always obtain proper authorization before testing any system
+- Do not use this tool against systems you don't own or have permission to test
+- The authors are not responsible for any misuse or damage caused by this tool
+- This tool should not be used in a production environment without proper validation
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🌟 Updates
+
+### v2.0.0 (2024)
+- Complete rewrite with modern Python practices
+- Added async/concurrent scanning
+- Added web crawling and URL discovery
+- Added technology fingerprinting
+- Added subdomain enumeration
+- Added port scanning
+- Added SSTI, XXE, LDAP injection testing
+- Added JWT security analysis
+- Added GraphQL security testing
+- Added API security testing
+- Added CORS testing
+- Added HTML report generation
+- Improved detection accuracy
+- Color-coded console output
+- Comprehensive documentation
+
+### v1.0.0 (2023)
+- Initial release
+- Basic vulnerability testing
+- SQL injection, XSS, CSRF testing
+- Cookie security analysis
+- HTTP header checks
+
+---
+
+<p align="center">
+  Made with ❤️ for the security community
+</p>
+
+![Cyberpunk Security](https://user-images.githubusercontent.com/68110223/216805944-5500f5b8-883f-4621-876a-d8c9da678813.png)
